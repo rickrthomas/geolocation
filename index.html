@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+    </head>
+
+<body>
+    <script>
+        if ('geolocation' in navigator) {
+            navigator.geolocation.getCurrentPosition(position =>
+            {   
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+                document.getElementById('latitude').textContent = lat;
+                document.getElementById('longitude').textContent = lon;
+                //console.log(position)
+            });s
+        } else {
+                console.log('geolocation is not available')
+        }
+
+    </script>
+    <h1>GEOLOCATION</h1>
+    <p>Latitude: <span id="latitude"></span><br/</p>
+    <p>Longitude: <span id="longitude"></span><br/</p>
+</body>
+</html>
